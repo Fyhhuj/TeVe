@@ -20,7 +20,9 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.0-271.7.beta <3.7.0'
+  # تم تحديث نطاق SDK ليتوافق مع Dart 3.0.0 وما فوق، حيث أن Flutter 3.19.6 يستخدم Dart 3.0.7
+  # هذا سيسمح باستخدام أحدث إصدارات الباقات التي تتطلب Dart 3+
+  sdk: '>=3.0.0 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -32,22 +34,25 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  google_fonts: ^3.0.1
-  intl: ^0.18.0
-  flutter_staggered_animations: ^1.1.1
-  http: ^0.13.5
-  either_dart: ^0.3.0
-  loading_animation_widget: ^1.2.0+4
-  carousel_slider: ^4.2.1
-  cached_network_image: ^3.2.3
-  better_player: ^0.0.83
-  lottie: ^2.1.0
-  shared_preferences: ^2.0.15
-  
+  cupertino_icons: ^1.0.6 # تم التحديث
+  google_fonts: ^6.2.1 # تم التحديث
+  intl: ^0.19.0 # تم التحديث
+  flutter_staggered_animations: ^1.1.1 # هذا الإصدار قديم، ولكن لا يوجد إصدار أحدث متوافق مع Dart 3+ بشكل مباشر.
+                                      # قد تحتاج إلى البحث عن بديل أو الانتظار لتحديثه.
+                                      # إذا أدت هذه الباقة إلى مشاكل، فكر في إزالتها مؤقتًا أو البحث عن بديل.
+  http: ^1.2.1 # تم التحديث
+  either_dart: ^1.0.0 # تم التحديث
+  loading_animation_widget: ^1.2.0+4 # هذا الإصدار يبدو متوافقًا، لا يوجد تحديث كبير مطلوب.
+  carousel_slider: ^4.2.1 # هذا الإصدار يبدو متوافقًا، لا يوجد تحديث كبير مطلوب.
+  cached_network_image: ^3.3.1 # تم التحديث إلى إصدار يدعم Dart 3+
+  better_player: ^0.0.83 # هذا الإصدار قديم. أحدث إصدار هو 0.0.85+1.
+                        # قد تحتاج إلى التحديث إلى 0.0.85+1 إذا استمرت المشاكل.
+                        # (تحقق من سجل التغييرات للتوافق مع Dart 3+)
+  lottie: ^3.1.0 # تم التحديث إلى إصدار يدعم Dart 3+
+  shared_preferences: ^2.2.3 # تم التحديث
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -57,7 +62,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.0 # تم التحديث
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -100,3 +105,4 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
